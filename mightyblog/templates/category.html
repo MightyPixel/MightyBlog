@@ -1,0 +1,39 @@
+{% extends "index.html" %}
+
+{% block title  %}
+    Articles
+{% endblock %}
+
+{% block aside_title %}Categories:{% endblock %}
+{% block aside_content %}
+    {% for category in categories %}
+    <a href="{{ category.get_absolute_url }}" class="my_h2 a_inverse">{{ categery.name }}</a><br>
+    <hr>
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="/">Home</a> <span class="divider">/</span></li>
+        <li><a href="/articles/">Articles</a> <span class="divider">/</span></li>
+        <li class="active">{{ page_title }}</li>
+    </ul>
+    <span class="my_h1">Articles:</span>
+    <hr>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href='{{ post.get_absolute_url }}' class="my_h1">{{ post.title }}</a>
+            <div class="my_h3">
+                {% for category in categories %}
+                {% if not forloop.first %} | {% endif %}
+                <a href="{{ category.get_absolute_url }}" class="a_inverse">{{ category.name}}</a>
+                {% endfor %}
+            </div>
+            <p>{{ post.description }}</p>
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,33 @@
+
+{% extends "index.html" %}
+
+{% block title %}Articles{% endblock %}
+
+{% block aside_content %}
+    {% for project in spotlighted %}
+        <a href="project.get_absolute_url" class="a_inverse">{{ project.name }}</a>
+    {% endfor %}
+
+{% endblock %}
+
+
+{% block content %}
+    <h2>{{ post.title }}</h2>
+    <time>{{ post.date_created }}</time>
+    {% for category in post.category_set.all %}
+    <a href="{{ category.get_absolute_url }}">{{ category }}</a>
+    {% endfor %}
+
+    <p>
+        {{ post.content }}
+    </p>
+
+    {% if comments %}
+        <p class="my_h2">Comments:</p>
+        <hr>
+        {% for comment in comments %}
+            <p class="my_h3">{{ comment.author }}:</p>
+            <p>{{ comment.text }}</p>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

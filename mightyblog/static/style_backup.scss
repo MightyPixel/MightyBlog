@@ -1,0 +1,233 @@
+$orange: #F14E23;
+$baby_blue: #35BDF5;
+
+$alert_colour: #FFCCCC;
+$border_colour: #FF9966;
+$confirm_colour: #CCFF99;
+$highlight_colour: #FFFF99;
+
+$gray_border_colour: #E7E7E7;
+$dark_gray_colour: #222;
+
+$none: 0pt;
+$small: 1pt;
+$medium: 2pt;
+$large: 3pt;
+$huge: 4pt;
+
+$serious_font: 'Yanone Kaffeesatz';
+$art_font: 'tangerine';
+
+html
+{
+    min-height: 100%;
+    height: 100%;
+}
+
+body
+{
+
+    display: block;
+    max-width: 950px;
+
+    margin: auto;
+    min-height: 100%;
+    height: 100%;
+    background-image: url("/static/bg6.png");
+
+    a
+    {
+        outline: none;
+        text-decoration: none;
+        color: $baby_blue;
+        &:hover
+        {
+            border-bottom: solid $medium;
+            border-color: $orange;
+        }
+    }
+
+    .alert
+    {
+        max-width: 50%;
+        padding: $small;
+        padding-left: $medium;
+        -webkit-border-radius: $huge;
+
+        background: $alert_colour;
+        border: $small dotted $border_colour;
+    }
+    .highlight
+    {
+        max-width: 50%;
+        padding: $small;
+        padding-left: $medium;
+        -webkit-border-radius: $huge;
+
+        background: $highlight_colour;
+        border: $small dotted $border_colour;
+    }
+    .confirm
+    {
+        max-width: 50%;
+        padding: $small;
+        padding-left: $medium;
+        -webkit-border-radius: $huge;
+
+        background: $confirm_colour;
+        border: $small dotted $border_colour;
+    }
+
+    form
+    {
+        max-width: 68%;
+        display: block;
+        -webkit-border-radius: $huge;
+        background: #ddd;
+        margin: 0 0 20px;
+        padding: $huge;
+        font: 12px/22px Verdana, sans-serif;
+        label
+        {
+            color: #666;
+            display: block;
+            font-size: 10px;
+            font-weight: bold;
+            margin: 0 0 0 2px;
+        }
+        input
+        {
+            margin: 0 0 10px;
+        }
+    }
+}
+
+header
+{
+    h1
+    {
+        float: left;
+        font: $serious_font, arial, sans-serif;
+        color: #eee;
+    }
+    h2
+    {
+
+        float: right;
+        color: $orange;
+        font: normal 100% $art_font;
+        font-size: 28pt;
+    }
+}
+
+nav
+{
+    clear: both;
+    ul
+    {
+        padding: $none;
+        margin: $none;
+        li
+        {
+            display: inline;
+            font: normal 100% $serious_font, sans-serif;
+            font-size: 20pt;
+            //padding-left: 20px;
+            padding-right: 20px;
+        }
+        .curr_menu_item
+        {
+            //margin-left: $huge;
+            //padding:$medium;
+            //background: white;
+            //border: $small solid $gray_border_colour;
+            border-bottom: $large solid $orange;
+            -webkit-border-radius: $huge;
+            a
+            {
+               color: $orange;
+            }
+        }
+    }
+}
+
+aside
+{
+    max-width: 29%;
+    float: right;
+    padding: $small;
+    //border: $small dotted $gray_border_colour;
+    .pin
+    {
+        margin-top: -35px;
+        margin-right: -25px;
+        float:right;
+    }
+
+    article
+    {
+        margin-bottom: $huge;
+        border: $medium dotted $baby_blue;
+        width: 70%;
+        -webkit-border-radius: $huge;
+    }
+}
+
+article
+{
+    display: block;
+    color: #000;
+    background: #FdFdFd;
+    padding: 10pt;
+    border-top: $large solid $baby_blue;
+    border-left: $large solid $baby_blue;
+    border-bottom: $medium solid $orange;
+    border-right: $small solid $dark_gray_colour;
+
+
+    width: 76%;
+    
+    min-height: 69%;
+
+    h1
+    {
+        font: normal 100% $serious_font, arial, sans-serif;
+        font-size: 20pt;
+        color: $dark_gray_colour;
+    }
+
+    h2
+    {
+        font: normal 100% $serious_font, arial, sans-serif;
+        color: $orange;  
+    }
+
+    .code_block
+    {
+        max-width: 70%;
+        overflow: hidden;
+        border: $medium solid $gray_border_colour;
+        background: #eee;
+        color: $dark_gray_colour;
+        pre
+        {
+            margin: $none;
+            padding-left: $huge;
+            background: $dark_gray_colour;
+            border: $medium solid $gray_border_colour;
+            code
+            {
+                color: $orange;
+            }
+        }
+    }
+}
+
+footer
+{
+    p
+    {
+        color: $orange;
+        text-align: center;
+    }
+}

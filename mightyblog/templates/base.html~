@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <title>{% block title %}Mighty Pixel's Blog{% endblock %}</title>
+        <link href="{{ STATIC_URL  }}templatemo_style.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="{{ STATIC_URL  }}js/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                if (document.title == "Articles")
+                    var d = document.getElementById("articles_menu");
+                else if (document.title == "Home")
+                    var d = document.getElementById("home_menu");
+
+                d.className = d.className + " current";
+            });
+        </script>
+    </head>
+    <body>
+        <div id="templatemo_wrapper">
+            <div id="templatemo_header">
+                <div id="header_left">
+                    <div id="site_title">
+                        <a href="/" target="_parent" class="base_link"><!--
+                            <img src="{{ STATIC_URL  }}images/monkey.png" alt="logo" />--><!--
+                            --><span>Wellcome to myBlog</span><!--
+                    --></a>
+                    </div>
+                </div>  
+                <div id="header_right">
+                    <ul id="social_box">
+                        <li><a href="#"><img src="{{ STATIC_URL  }}images/github_icon.png" alt="github" /></a></li>
+                        <li><a href="#"><img src="{{ STATIC_URL  }}images/googleplus_icon.png" alt="google+" /></a></li>
+                        <li><a href="#"><img src="{{ STATIC_URL  }}images/linkedin_icon.png" alt="linkin" /></a></li> 
+                        <li><a href="#"><img src="{{ STATIC_URL  }}images/twitter_icon.png" alt="twitter" /></a></li> 
+                    </ul>  
+                </div>
+                <div class="cleaner">
+                </div>
+            </div>
+            <div id="templatemo_menu">
+                <ul>
+                    <li><a id="home_menu" href="/" >Home</a></li>
+                    <li><a id="articles_menu" href="/articles/">Articles</a></li>
+                    <li><a href="/">Showcase</a></li>
+                    <li><a href="/">Courses</a></li>
+                    <li><a href="contact.html">self</a></li>
+                </ul>
+            
+                <div id="search_box">
+                    <label for="search_input" id="search_label">Search:</label>
+                    <input id="search_input"/>
+                    <input type="image" id="search_icon" src="{{ STATIC_URL  }}images/search_icon.png"/>
+
+               </div>
+            </div> <!-- end of templatemo_menu -->
+            <div id="content_wrapper">
+                <div id="content">
+                    {% block content %}
+
+                    {% endblock %}
+               </div>
+                <div id="sidebar_wrapper">
+                    <div id="sidebar_top">
+                      
+                    </div>
+                    <div id="sidebar">
+                        <h2>Related Posts</h2>
+                        <ul class="templatemo_list col_w260">
+                        {% for rel in related %}
+                        <li><a href="{{ rel.get_absolute_url }}" class="base_link">{{ rel }}</a></li>
+                        {% endfor %}
+                        </ul>
+                    <div class="cleaner_h30">
+                    </div>
+                    <h2>Categories</h2>
+                    <ul class="templatemo_list col_w260">
+                        {% for category in categories %}
+                            <li><a href="/" class="base_link">{{ category }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div id="sidebar_bottom">
+                </div>
+            </div>
+            <div class="cleaner">
+            </div>
+            <div id="templatemo_footer">
+                <div class="footer_box">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/">self</a></li>
+                        <li><a href="/">Projects</a></li>
+                        <li><a href="/">Links</a></li>
+                    </ul>
+                </div>
+                <div class="footer_box">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Github</a></li>
+                        <li><a href="/">Twitter</a></li>
+                        <li><a href="/">LinkedIn</a></li>
+                        <li><a href="/">Google+</a></li>
+                    </ul>
+                </div>
+                <div class="footer_box last">
+                    <h4>About Us</h4>
+                    <p>About <a href="/">More...</a></p>
+                </div>
+                <div class="cleaner"></div>
+            </div>
+            <div id="templatemo_copyright">
+                Copyright © 2013
+                <a href="#">Ognyan Angelov</a> |
+                <a href="/" target="_parent">Another Link</a>
+                by
+                <a href="/" target="_parent">Github</a>
+            </div>
+            <div style="text-align: center; font-size: 0.75em;">Com
+                <a href="/">Link</a>
+                <a href="/">Another Link</a>
+            </div>
+        </div>
+    </body>
+</html>

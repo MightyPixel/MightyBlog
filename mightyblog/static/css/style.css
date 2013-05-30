@@ -1,0 +1,181 @@
+html {
+  min-height: 100%;
+  height: 100%; }
+
+body {
+  display: block;
+  max-width: 950px;
+  margin: auto;
+  min-height: 100%;
+  height: 100%;
+  background-image: url("bg6.png"); }
+  body a {
+    outline: none;
+    text-decoration: none;
+    color: #35bdf5; }
+    body a:hover {
+      border-bottom: solid 2pt;
+      border-color: #f14e23; }
+  body .a_inverse {
+    color: #f14e23; }
+    body .a_inverse:hover {
+      border-color: #35bdf5; }
+  body .dotted {
+    border-top: 1px dotted;
+    color : #35bdf5;
+    height: 0px;
+    margin: 0; }
+  body #social_box {
+    margin: 0pt;
+    padding: 0pt;
+    float: right; }
+    body #social_box img {
+      margin: 0pt;
+      padding: 0pt; }
+  body .alert {
+    max-width: 50%;
+    padding: 1pt;
+    padding-left: 2pt;
+    -webkit-border-radius: 4pt;
+    background: #ffcccc;
+    border: 1pt dotted #ff9966; }
+  body .highlight {
+    max-width: 50%;
+    padding: 1pt;
+    padding-left: 2pt;
+    -webkit-border-radius: 4pt;
+    background: #ffff99;
+    border: 1pt dotted #ff9966; }
+  body .confirm {
+    max-width: 50%;
+    padding: 1pt;
+    padding-left: 2pt;
+    -webkit-border-radius: 4pt;
+    background: #ccff99;
+    border: 1pt dotted #ff9966; }
+  body form {
+    max-width: 68%;
+    display: block;
+    -webkit-border-radius: 4pt;
+    background: #ddd;
+    margin: 0 0 20px;
+    padding: 4pt;
+    font: 12px/22px Verdana, sans-serif; }
+    body form label {
+      color: #666;
+      display: block;
+      font-size: 10px;
+      font-weight: bold;
+      margin: 0 0 0 2px; }
+    body form input {
+      margin: 0 0 10px; }
+  body time {
+    display: block;
+    margin: 0pt;
+    font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
+    font-size: 14pt;
+    color: #f14e23; }
+  body .my_h1 {
+    font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
+    font-size: 20pt;
+    color: #35bdf5;
+    margin: 4pt;
+    margin-bottom: 0pt; }
+  body .my_h2 {
+    font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
+    font-size: 18pt;
+    color: #f14e23;
+    margin: 2pt; }
+  body .my_h3 {
+    font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
+    font-size: 16pt;
+    margin: 2pt; }
+  body ul {
+    list-style-image: url("arrow_05.png"); }
+
+header h1 {
+  float: left;
+  font: "Yanone Kaffeesatz", arial, sans-serif;
+  color: #eee; }
+header h2 {
+  float: right;
+  clear: right;
+  margin: 0pt;
+  padding-right: 15%;
+  color: #35bdf5;
+  font: normal 100% "tangerine";
+  font-size: 28pt; }
+header #social_box {
+  padding-right: 5%; }
+
+nav {
+  clear: both; }
+  nav ul {
+    padding: 0pt;
+    margin: 0pt; }
+    nav ul li {
+      display: inline;
+      font: normal 100% "Yanone Kaffeesatz", sans-serif;
+      font-size: 20pt;
+      padding-right: 20px; }
+    nav ul .curr_menu_item {
+      border-bottom: 3pt solid #f14e23;
+      -webkit-border-radius: 4pt; }
+      nav ul .curr_menu_item a {
+        color: #f14e23; }
+
+aside {
+  width: 29%;
+  float: right;
+  padding: 1pt; }
+  aside .pin {
+    margin-top: -35px;
+    margin-right: -25px;
+    float: right; }
+  aside article {
+    margin-bottom: 4pt;
+    border: 2pt dotted #35bdf5;
+    width: 70%;
+    -webkit-border-radius: 4pt; }
+  aside #aside_navigation h2 {
+    margin: 0pt; }
+
+article {
+  display: block;
+  color: #000;
+  background: #FdFdFd;
+  border-top: 1pt solid #35bdf5;
+  border-left: 3pt solid #35bdf5;
+  border-bottom: 2pt solid #f14e23;
+  border-right: 0pt solid #222222;
+  width: 67%;
+  min-height: 69%;
+  padding: 15px; }
+  article h2 {
+    font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
+    font-size: 20pt;
+    color: #222222;
+    margin: 4pt;
+    margin-bottom: 4pt; }
+  article h3 {
+    margin: 0pt;
+    font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
+    font-size: 16pt;
+    color: #f14e23; }
+  article .code_block {
+    max-width: 70%;
+    overflow: hidden;
+    border: 2pt solid #e7e7e7;
+    background: #eee;
+    color: #222222; }
+    article .code_block pre {
+      margin: 0pt;
+      padding-left: 4pt;
+      background: #222222;
+      border: 2pt solid #e7e7e7; }
+      article .code_block pre code {
+        color: #f14e23; }
+
+footer p {
+  color: #f14e23;
+  text-align: center; }
