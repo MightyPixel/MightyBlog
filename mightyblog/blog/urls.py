@@ -9,4 +9,5 @@ urlpatterns = patterns('blog.views',
     (r'^articles/$', 'articles'),
     (r'^projects/$', 'projects'),
     (r'^self/$', 'about'),
+    (r'^tinymce/', include('tinymce.urls')),
 )
