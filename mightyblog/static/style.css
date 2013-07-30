@@ -20,6 +20,11 @@ body {
     color: #f14e23; }
     body .a_inverse:hover {
       border-color: #35bdf5; }
+  body .dotted {
+    border-top: 1px dotted;
+    color : #35bdf5;
+    height: 0px;
+    margin: 0; }
   body #social_box {
     margin: 0pt;
     padding: 0pt;
