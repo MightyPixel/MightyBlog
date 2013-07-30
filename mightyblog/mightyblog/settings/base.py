@@ -91,10 +91,11 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    STATIC_ROOT.child('images'),
-    STATIC_ROOT.child('css'),
-    STATIC_ROOT.child('js'),
-    #STATIC_ROOT.child('admin'),
+    # STATIC_ROOT.child('images'),
+    # STATIC_ROOT.child('css'),
+    # STATIC_ROOT.child('js'),
+    # STATIC_ROOT.child('admin'),
+    '/home/pixel/Media/MightyBlog/',
 )
 
 
@@ -146,8 +147,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #----------------
-    'django_admin_bootstrapped',
-
+    'bootstrap_admin',
     'django.contrib.admin',
     'django.contrib.admindocs',
     #----------------
