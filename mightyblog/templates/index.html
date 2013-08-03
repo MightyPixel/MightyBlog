@@ -53,10 +53,10 @@
             <article id="aside_navigation">
                 <img class="pin" src="/static/pin.png" alt="pin">
                 <span class="my_h1">{% block aside_title %}Spotlight:{% endblock %}</span>
-                <hr>
                 {% block aside_content %}
                     {% for project in spotlighted %}
-                    <a href="{{ project.get_absolute_url }}"><h2 class="my_h2">{{ project.title }}</h2></a>
+                    <hr>
+                    <a href="{{ project.get_absolute_url }}"><h4 class="my_h2">{{ project.title }}</h4></a>
                     {% endfor %}
                 {% endblock %}
             </article>
@@ -75,8 +75,8 @@
             {% block content %}
                 {% for post in posts %}
                 <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-                <time datetime="{{ post.date_created }}">{{ post.date_created }}</time>
-                {{ post.text|slice:"370" }}...<a href="{{ post.get_absolute_url }}">Read More</a>
+                <time datetime="{{ post.date_created }}">&#123;&#123; {{ post.date_created }} &#125;&#125;</time>
+                {{ post.content|slice:"370" }}...<a href="{{ post.get_absolute_url }}">Read More</a>
                 <hr>
                 {% endfor %}
             {% endblock %}

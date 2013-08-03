@@ -95,7 +95,8 @@ STATICFILES_DIRS = (
     # STATIC_ROOT.child('css'),
     # STATIC_ROOT.child('js'),
     # STATIC_ROOT.child('admin'),
-    '/home/pixel/Media/MightyBlog/',
+    #'/home/pixel/Media/MightyBlog/',
+    '/home/zero/Media/Blog/',
 )
 
 

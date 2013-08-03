@@ -11,9 +11,8 @@
 {% block title%}Self{% endblock %}
 
 {% block content %}
-<section>
-    <h2>Welcome to Ognyan Angelov blog</h2>
-</section>
+    {{ post }}
+    {{ post.content|safe }}
 {% endblock %}
 
 
