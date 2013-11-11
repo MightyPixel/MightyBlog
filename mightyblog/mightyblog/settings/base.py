@@ -7,7 +7,7 @@ import os
 from django.core.exceptions import ImproperlyConfigured
 from unipath import Path
 
-import keychain
+#import keychain
 
 def get_env_variable(var_name):
     """
@@ -35,15 +35,15 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': keychain.name,                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
-        'USER': keychain.user,
-        'PASSWORD': keychain.password,
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
-    }
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        #'NAME': keychain.name,                      # Or path to database file if using sqlite3.
+        ## The following settings are not used with sqlite3:
+        #'USER': keychain.user,
+        #'PASSWORD': keychain.password,
+        #'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        #'PORT': '',                      # Set to empty string for default.
+#    }
 }
 
 
@@ -128,7 +128,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = keychain.secret_key # get_env_variable('MIGHTYBLOG_SECRET_KEY')
+SECRET_KEY = "SECRET_KEY_HEROKU" #keychain.secret_key # get_env_variable('MIGHTYBLOG_SECRET_KEY')
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
