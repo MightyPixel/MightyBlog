@@ -1,7 +1,5 @@
 *.log
 *.pot
 *.pyc
-local_settings.py
 keychain.py
-mightyblog/blog/.ropeproject/*
-env
+static/

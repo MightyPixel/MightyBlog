@@ -15,9 +15,12 @@ def home(request):
     """
     Index page
     """
-    all_posts = Post.objects.order_by('date_modefied')[:20]
+    all_posts = Post.objects.order_by('date_modefied')
     spotlighted = Post.get_top_rated()
-    related = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
+    if len(all_posts) > 0:
+        related = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
+    else:
+        related = None
     return render_to_response('index.html',
             {
                 "posts": all_posts,

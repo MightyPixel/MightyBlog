@@ -28,9 +28,16 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': keychain.name,                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': keychain.user,
@@ -74,7 +81,7 @@ MEDIA_ROOT = PROJECT_ROOT.child("media")
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = '/mdedia/'
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -86,6 +93,8 @@ STATIC_ROOT = PROJECT_ROOT.child("static")
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
+
+
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
@@ -96,8 +105,16 @@ STATICFILES_DIRS = (
     # STATIC_ROOT.child('js'),
     # STATIC_ROOT.child('admin'),
     #'/home/pixel/Media/MightyBlog/',
-    '/home/zero/Media/Blog/',
+    #'/home/zero/Media/Blog/',
 )
+
+# Static asset configuration
+#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+#STATIC_ROOT = 'staticfiles'
+
+#STATICFILES_DIRS = (
+#    os.path.join(BASE_DIR, 'static'),
+#)
 
 
 # List of finder classes that know how to find static files in

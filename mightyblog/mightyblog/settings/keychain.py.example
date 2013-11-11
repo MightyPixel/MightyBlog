@@ -1,0 +1,7 @@
+
+
+name = "example"
+user = ""
+password = ""
+
+secret_key = "secretkey"
