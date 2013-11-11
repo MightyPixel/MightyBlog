@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block title  %}
+    Articles
+{% endblock %}
+
+{% block aside_title %}Categories:{% endblock %}
+{% block aside_content %}
+    {% for category in categories %}
+    <h2 class="my_h2"><a href="{{ category.get_absolute_url }}" class="a_inverse">{{ category.name }}</a></h2>
+    <hr class="dotted">
+    {% endfor %}
+{% endblock %}
+
+{% block content %}
+    <h2 class="my_h1">{{ page_title }}</h2>
+    {% if page_moto %} <p>{{ page_moto }}</p> {% endif %}
+    <hr>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href='{{ post.get_absolute_url }}' class="my_h1">{{ post.title }}</a>
+
+            <div class="my_h3">
+                {% for category in post.category_set.all %}
+                {% if not forloop.first %} | {% endif %}
+                <h3><a href="{{ category.get_absolute_url }}" class="a_inverse">{{ category.name}}</a></h3>
+                {% endfor %}
+            </div>
+            <h4 class="my_h3">{{ post.description }}</h4>
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

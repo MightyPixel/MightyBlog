@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <title>{% block title %}Newsroom{% endblock %} | Ognyan Angelov's Blog </title>
+	    <meta name="description" content="Ognyan Angelov Blog" />
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+  	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css" />
+        <script type="text/javascript">
+            document.write("\<script src='//ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js' type='text/javascript'>\<\/script>");
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var full_title = document.title.split(' | ');
+                var title = full_title[0];
+                if ( title == "Newsroom" ) {
+                    section = "news_menu";
+                } else if ( title == "Articles" ) {
+                    section = "articles_menu";
+                } else if ( title == "Self" ) {
+                    section = "self_menu";
+                } else if ( title == "Projects" ) {
+                    section = "projects_menu";
+                }
+                d = document.getElementById(section);
+                d.className = "curr_menu_item";
+            });
+        </script>
+	</head>
+	<body>
+        <header>
+            <h1>Ognyan Angelov's<a href="#">.blog</a></h1>
+            <div id="social_box">
+                <a rel="nofollow" href="http://www.linkedin.com/pub/ognyan-angelov/3b/6b/12a"><img class="linkedin_icon" src="/static/linkedin_icon1.png" alt="linkedin_icon"></a>
+                <a rel="nofollow" href="https://github.com/MightyPixel"><img class="github_icon" src="/static/github_icon.png" alt="github_icon"></a>
+                <a rel="nofollow" href="https://twitter.com/mightypixel"><img class="twitter_icon" src="/static/twitter_icon.png" alt="twitter_icon"></a>
+                <a rel="nofollow" href=https://plus.google.com/u/0/110035921318635890483""><img class="googleplus_icon" src="/static/googleplus_icon.png" alt="googleplus_icon"></a>
+                <!-- <a rel="nofollow"><img class="rss_icon"
+                    src="/static/rss_icon.png" alt="rss_icon"></a> -->
+            </div>
+            <h2>One does not simply call me 'just' a blog</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a id="news_menu" href="/">Newsroom</a></li>
+                <li><a id="articles_menu" href="/articles/">Articles</a></li>
+                <li><a id="projects_menu" href="/projects/">Projects</a></li>
+                <li><a id="self_menu" href="/self/">.self</a></li>
+            </ul>
+        </nav>
+        <aside>
+            <article id="aside_navigation">
+                <img class="pin" src="/static/pin.png" alt="pin">
+                <span class="my_h1">{% block aside_title %}Spotlight:{% endblock %}</span>
+                {% block aside_content %}
+                    {% for project in spotlighted %}
+                    <hr>
+                    <a href="{{ project.get_absolute_url }}"><h4 class="my_h2">{{ project.title }}</h4></a>
+                    {% endfor %}
+                {% endblock %}
+            </article>
+            {% block aside %}
+                {% for related_post in related %}
+                    <article>
+                        <img class="pin" src="/static/pin.png" alt="pin">
+                        <h2>{{ related_post.title }}</h2>
+                        <p>{{ related_post.description }}<br />
+                        <a href="{{ related_post.get_absolute_url }}">Read more</a></p>
+                    </article>
+                {% endfor %}
+            {% endblock %}
+        </aside>
+        <article>
+            {% block content %}
+                {% for post in posts %}
+                <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                <time datetime="{{ post.date_created }}">&#123;&#123; {{ post.date_created }} &#125;&#125;</time>
+                {{ post.content|slice:"370" }}...<a href="{{ post.get_absolute_url }}">Read More</a>
+                <hr>
+                {% endfor %}
+            {% endblock %}
+        </article>
+        <footer>
+              <p>Copyright &copy; Ognyan Angelov | <a rel="nofollow" href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a rel="nofollow" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a></p>
+        </footer>
+	</body>
+</html>
+

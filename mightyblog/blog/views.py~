@@ -1,0 +1,96 @@
+import datetime
+
+from django.http import HttpResponse
+from django.shortcuts import render_to_response
+from django.shortcuts import get_list_or_404
+from django.template import RequestContext
+
+from tagging.models import Tag
+from tagging.models import TaggedItem
+
+from models import Comment
+from models import Category
+from models import Post
+from models import Project
+
+def home(request):
+    """
+    Returns 
+        - 20 posts: Name, Date-created, Text [:255] 
+    """
+#    if '88.203.246.93' == request.META['REMOTE_ADDR']:
+#        return HttpResponse("Kurs za tebe tebe i tebe")
+    all_posts = Post.objects.order_by('date_modefied')[:20]
+    posts = [(post.title, post.get_absolute_url(), post.date_created, post.text[:255])
+             for post in all_posts]
+    categories = [(post.title, post.get_absolute_url()) for post in Post.get_top_rated()];
+    related_posts = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
+    related = [(post.title, post.get_absolute_url(), post.description)
+               for post in related_posts]
+    return render_to_response('index.html',
+            {
+                "posts" : posts,
+                "categories" : categories,
+                "related" : related,
+            },
+            context_instance=RequestContext(request))
+
+
+def articles(request):
+    all_posts = Post.objects.order_by('date_created')
+    posts = [(post.title, post.get_absolute_url(), post.description, post.category_set.all())
+             for post in all_posts]
+    titles = [title for title in all_posts]
+    categories = [(category.name, category.get_absolute_url()) for category in Category.objects.all()]
+    related_posts = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
+    related = [(post.title, post.get_absolute_url(), post.description)
+               for post in related_posts]
+    return render_to_response('articles.html',
+            {
+                "posts" : posts,
+                "categories" : categories,
+                "related" : related,
+            },
+            context_instance=RequestContext(request))
+
+
+def post(request, post_id, post):
+    post = Post.objects.get(pk=post_id)
+    comments = Comment.objects.filter(post = post)
+    categories = Tag.objects.all()[:6]
+    related_posts = TaggedItem.objects.get_related(post, Post)[:6]
+    related = [(post.title, post.get_absolute_url(), post.description)
+               for post in related_posts]
+    return render_to_response('post.html',
+            {
+                "post" : post,
+                "comments" : comments,
+                "related" : related,
+                "categories" : categories,
+            },
+            context_instance=RequestContext(request))
+
+def category(request, category):
+    all_posts = Post.objects.filter(category__name = category)
+    posts = [(post.title, post.get_absolute_url(), post.description)
+             for post in all_posts]
+    titles = [title for title in all_posts]
+    categories = [(category.name, category.get_absolute_url()) for category in Category.objects.all()]
+    related_posts = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
+    related = [(post.title, post.get_absolute_url(), post.description)
+               for post in related_posts]
+    return render_to_response('articles.html',
+            {
+                "posts" : posts,
+                "categories" : categories,
+                "related" : related,
+            },
+            context_instance=RequestContext(request))
+def about(request):
+    projects = Project.objects.all()
+    titles = [project.name for project in projects]
+    return render_to_response('about.html',
+            {
+                "projects" : titles,
+            },
+            context_instance=RequestContext(request))

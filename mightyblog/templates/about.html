@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+
+{% block aside_title %}Projects:{% endblock %}
+{% block aside_content %}
+    {% for project in projects %}
+    <a href="{{ project.get_absolute_url }}" class="my_h2">{{ project.name }}</a><br>
+    {% endfor %}
+{% endblock %}
+
+
+{% block title%}Self{% endblock %}
+
+{% block content %}
+    {{ post }}
+    {{ post.content|safe }}
+{% endblock %}
+
+

@@ -1,0 +1,10 @@
+from django.conf.urls import patterns
+from django.core.urlresolvers import resolve
+
+urlpatterns = patterns('blog.views',
+    (r'^$', 'home'),
+    (r'^post/(?P<post_id>\d+)/(?P<post>\w+)', 'post'), 
+    (r'^category/(?P<category>\w+)', 'category'),
+    (r'^articles/$', 'articles'),
+    (r'^self/$', 'about'),
+)
