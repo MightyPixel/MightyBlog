@@ -76,7 +76,7 @@
                 {% for post in posts %}
                 <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
                 <time datetime="{{ post.date_created }}">&#123;&#123; {{ post.date_created }} &#125;&#125;</time>
-                {{ post.content|slice:"370" }}...<a href="{{ post.get_absolute_url }}">Read More</a>
+                {{ post.content|slice:"370"|safe }}...<a href="{{ post.get_absolute_url }}">Read More</a>
                 <hr>
                 {% endfor %}
             {% endblock %}

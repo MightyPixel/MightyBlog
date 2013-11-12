@@ -7,7 +7,6 @@ import os
 from django.core.exceptions import ImproperlyConfigured
 from unipath import Path
 
-#import keychain
 
 def get_env_variable(var_name):
     """
@@ -20,7 +19,6 @@ def get_env_variable(var_name):
         raise ImproperlyConfigured(error_msg)
 
 PROJECT_ROOT = Path(__file__).ancestor(3)
-# DIRNAME = os.path.abspath(os.path.join(os.path.dirname(__file__),"./../.."))
 
 ADMINS = (
     ('Ognyan Angelov', 'ognyan_angelov@yahoo.com'),
@@ -28,36 +26,16 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-import dj_database_url
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
-DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        #'NAME': keychain.name,                      # Or path to database file if using sqlite3.
-        ## The following settings are not used with sqlite3:
-        #'USER': keychain.user,
-        #'PASSWORD': keychain.password,
-        #'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        #'PORT': '',                      # Set to empty string for default.
-#    }
-}
-
-
-DATABASES['default'] =  dj_database_url.config()
-
-# Hosts/domain names that are valid for this site; required if DEBUG is False
-# See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
-
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Sofia'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -150,7 +128,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'mightyblog.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'mightyblog.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

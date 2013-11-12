@@ -1,5 +1,7 @@
 from .base import *
 
+import keychain
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -8,7 +10,16 @@ EMAIL_PORT = 1025
 
 INTERNAL_IPS = ("127.0.0.1", )
 
-# INSTALED_APPS?
+WSGI_APPLICATION = 'mightyblog.wsgi_dev.application'
 
-# MIDWARE
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': keychain.name,                      # or path to database file if using sqlite3.
+        # the following settings are not used with sqlite3:
+        'USER': keychain.user,
+        'PASSWORD': keychain.password,
+        'HOST': '',                      # empty for localhost through domain sockets or '127.0.0.1' for localhost through tcp.
+        'PORT': '',                      # set to empty string for default.
+    }
+}

@@ -8,9 +8,10 @@ ALLOWED_HOSTS = ['*']#['mightypixel.net']
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-EMAIL_HOST = "localhost"
-EMAIL_PORT = 1025
+
+WSGI_APPLICATION = 'mightyblog.wsgi.application'
 
 INTERNAL_IPS = ("127.0.0.1", )
 
-
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()
