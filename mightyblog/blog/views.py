@@ -124,7 +124,7 @@ def category(request, category):
 
 def about(request):
     projects = Project.objects.all()
-    post = Post.objects.all()[1]
+    post = Post.objects.all()[0]
     return render_to_response('about.html',
             {
                 "projects" : projects,
