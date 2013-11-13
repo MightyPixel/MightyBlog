@@ -15,10 +15,11 @@ def home(request):
     """
     Index page
     """
-    all_posts = Post.objects.order_by('date_modefied')
+    all_posts = Post.objects.filter(visible=True).order_by('date_modefied')
     spotlighted = Post.get_top_rated()
     if len(all_posts) > 0:
         related = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
+        related = [post for post in related if post.visible == True]
     else:
         related = None
     return render_to_response('index.html',
@@ -115,6 +116,7 @@ def category(request, category):
         {
             "page_title": category.name,
             "page_moto": category.description,
+            "page_cover": category.get_cover_url(),
             "posts" : all_posts,
             "categories" : categories,
             "related" : related_posts,

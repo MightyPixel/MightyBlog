@@ -13,8 +13,12 @@
 {% endblock %}
 
 {% block content %}
-    <h2 class="my_h1">{{ page_title }}</h2>
-    {% if page_moto %} <p>{{ page_moto }}</p> {% endif %}
+    <div style="position: relative;z-index: 1">
+        <h2 class="my_h1" style="z-index: 4">{{ page_title }}</h2>
+        {% if page_moto %} <p>{{ page_moto }}</p> {% endif %}
+    </div>
+    <img src="/media/{{ page_cover }}" style="position: relative; width: 640px;
+    margin-top: -90px; z-index: 0;"/>
     <hr>
     <ul>
         {% for post in posts %}
