@@ -5,7 +5,7 @@ EMAIL_PORT = 1025
 
 ALLOWED_HOSTS = ['*']#['mightypixel.net']
 
-DEBUG = False 
+DEBUG = True 
 TEMPLATE_DEBUG = DEBUG
 
 
