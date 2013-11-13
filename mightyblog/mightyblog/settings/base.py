@@ -73,6 +73,9 @@ STATIC_ROOT = PROJECT_ROOT.child("staticfiles")
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
 
+DATABASES = {
+ 
+}
 
 
 # Additional locations of static files
