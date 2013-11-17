@@ -3,3 +3,4 @@
 *.pyc
 keychain.py
 staticfiles/
+mightyblog/manage.py
