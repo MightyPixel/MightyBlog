@@ -18,9 +18,9 @@
         {% if page_moto %} <p>{{ page_moto }}</p> {% endif %}
     </div>
     {% if page_cover %}
-    <img src="/media/{{ page_cover }}" style="position: relative; width: 640px;
+    <img src="/media/{{ page_cover }}" style="position: relative; width: 640px; 
+        margin-top: 0px; z-index: 0; width: 600px; height: 200px;"/>
     {% endif %}
-    margin-top: -90px; z-index: 0; width: 600px; height: 200px;"/>
     <hr>
     <ul>
         {% for post in posts %}
