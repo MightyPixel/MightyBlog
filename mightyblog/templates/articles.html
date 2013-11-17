@@ -17,8 +17,10 @@
         <h2 class="my_h1" style="z-index: 4">{{ page_title }}</h2>
         {% if page_moto %} <p>{{ page_moto }}</p> {% endif %}
     </div>
+    {% if page_cover %}
     <img src="/media/{{ page_cover }}" style="position: relative; width: 640px;
-    margin-top: -90px; z-index: 0;"/>
+    {% endif %}
+    margin-top: -90px; z-index: 0; width: 600px; height: 200px;"/>
     <hr>
     <ul>
         {% for post in posts %}
