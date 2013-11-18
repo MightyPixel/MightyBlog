@@ -10,8 +10,8 @@ urlpatterns = patterns('',
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': MEDIA_ROOT,
-        }),
+            }),
+    url(r'^redactor/', include('redactor.urls'))
 )

@@ -130,6 +130,9 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'mightyblog.urls'
 
+REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_UPLOAD = 'uploads/'
+
 # Python dotted path to the WSGI application used by Django's runserver.
 
 TEMPLATE_DIRS = (
@@ -154,7 +157,7 @@ INSTALLED_APPS = (
     'tagging',
     'south',
     'blog',
-    'tinymce',
+    'redactor',
 )
 
 # A sample logging configuration. The only tangible logging

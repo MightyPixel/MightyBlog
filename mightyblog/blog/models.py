@@ -1,9 +1,9 @@
 from datetime import datetime
 
 from django.db import models
+from redactor.fields import RedactorField
 from tagging.fields import TagField
 from tagging.utils import parse_tag_input
-from tinymce.models import HTMLField
 
 
 class Post(models.Model):
@@ -11,7 +11,7 @@ class Post(models.Model):
     description = models.CharField(max_length=255)
     date_created = models.DateTimeField(default=datetime.now())
     date_modefied = models.DateTimeField(default=datetime.now())
-    content = HTMLField()
+    content = RedactorField()
     tags = TagField()
     visible = models.BooleanField(default=True)
 
@@ -68,7 +68,7 @@ class Project(models.Model):
     name = models.CharField(max_length=63)
     related_posts = models.ManyToManyField(Post)
     github_url = models.URLField(null=True, blank=True)
-    content = HTMLField()
+    content = RedactorField()
     tags = TagField()
 
     def __unicode__(self):
