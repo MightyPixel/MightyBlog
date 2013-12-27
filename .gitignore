@@ -1,6 +1,7 @@
 *.log
 *.pot
 *.pyc
+*.db
 keychain.py
 staticfiles/
 mightyblog/manage.py

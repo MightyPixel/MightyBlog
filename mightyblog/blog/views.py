@@ -15,7 +15,7 @@ def home(request):
     """
     Index page
     """
-    all_posts = Post.objects.filter(visible=True).order_by('date_modefied')
+    all_posts = Post.posts.get_visible().order_by('date_modefied')
     spotlighted = Post.get_top_rated()
     if len(all_posts) > 0:
         related = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
@@ -35,7 +35,7 @@ def articles(request):
     """
     Articles page
     """
-    all_posts = Post.objects.order_by('date_created')
+    all_posts = Post.posts.get_visible().order_by('date_created')
     categories = Category.objects.all()
     try:
         related = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
@@ -53,7 +53,7 @@ def articles(request):
 
 def projects(request):
     projects = Project.objects.all()
-    posts = Post.objects.all()[:5]
+    posts = Post.posts.get_visible()[:5]
     return render_to_response('projects.html',
                               {
                                 "projects": projects,
@@ -62,7 +62,7 @@ def projects(request):
                               context_instance=RequestContext(request))
 
 
-def post(request, post_id, post_name):
+def article(request, post_id, post_name):
     post = Post.objects.get(pk=post_id)
     if request.method == "POST":
         comment_form = CommentForm()
@@ -78,7 +78,7 @@ def post(request, post_id, post_name):
     comments = Comment.objects.filter(post=post)
     related = TaggedItem.objects.get_related(post, Post)[:6]
     comment_form = CommentForm()
-    return render_to_response('post.html',
+    return render_to_response('article.html',
             {
                 "post": post,
                 "comments": comments,
@@ -126,7 +126,7 @@ def category(request, category):
 
 def about(request):
     projects = Project.objects.all()
-    post = Post.objects.all()[0]
+    post = Post.objects.first()
     return render_to_response('about.html',
             {
                 "projects" : projects,

@@ -6,6 +6,11 @@ from tagging.fields import TagField
 from tagging.utils import parse_tag_input
 
 
+class PostManager(models.Manager):
+    def get_visible(self):
+        return super(PostManager, self).get_queryset().filter(visible=True) 
+
+
 class Post(models.Model):
     title = models.CharField(max_length=127)
     description = models.CharField(max_length=255)
@@ -14,6 +19,9 @@ class Post(models.Model):
     content = RedactorField()
     tags = TagField()
     visible = models.BooleanField(default=True)
+
+    objects = models.Manager()
+    posts = PostManager()
 
     def __unicode__(self):
         return "%s | (%d,%d,%d)" % (self.title,
