@@ -5,13 +5,13 @@ EMAIL_PORT = 1025
 
 ALLOWED_HOSTS = ['*']#['mightypixel.net']
 
-DEBUG = True 
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 
 WSGI_APPLICATION = 'mightyblog.wsgi.application'
 
-INTERNAL_IPS = ("127.0.0.1", )
+INTERNAL_IPS = ("mightypixel.net", )
 
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
