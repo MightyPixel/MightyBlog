@@ -5,3 +5,5 @@
 keychain.py
 staticfiles/
 mightyblog/manage.py
+build
+media/

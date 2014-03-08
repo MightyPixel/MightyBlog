@@ -35,7 +35,7 @@
                 <a rel="nofollow" href="http://www.linkedin.com/pub/ognyan-angelov/3b/6b/12a"><img class="linkedin_icon" src="/static/linkedin_icon1.png" alt="linkedin_icon"></a>
                 <a rel="nofollow" href="https://github.com/MightyPixel"><img class="github_icon" src="/static/github_icon.png" alt="github_icon"></a>
                 <a rel="nofollow" href="https://twitter.com/mightypixel"><img class="twitter_icon" src="/static/twitter_icon.png" alt="twitter_icon"></a>
-                <a rel="nofollow" href=https://plus.google.com/u/0/110035921318635890483""><img class="googleplus_icon" src="/static/googleplus_icon.png" alt="googleplus_icon"></a>
+                <a rel="nofollow" href="https://plus.google.com/u/0/110035921318635890483"><img class="googleplus_icon" src="/static/googleplus_icon.png" alt="googleplus_icon"></a>
                 <!-- <a rel="nofollow"><img class="rss_icon"
                     src="/static/rss_icon.png" alt="rss_icon"></a> -->
             </div>
@@ -75,7 +75,7 @@
             {% block content %}
                 {% for post in posts %}
                 <h2><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-                <time datetime="{{ post.date_created }}">&#123;&#123; {{ post.date_created }} &#125;&#125;</time>
+                <time datetime="{{ post.date_created }}">&#123;&#123;{{ post.date_created }}&#125;&#125;</time>
                 {{ post.content|slice:"370"|safe }}...<a href="{{ post.get_absolute_url }}">Read More</a>
                 <hr>
                 {% endfor %}

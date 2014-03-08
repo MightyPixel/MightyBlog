@@ -13,5 +13,5 @@ WSGI_APPLICATION = 'mightyblog.wsgi.application'
 
 INTERNAL_IPS = ("mightypixel.net", )
 
-import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+#import dj_database_url
+#DATABASES['default'] =  dj_database_url.config()

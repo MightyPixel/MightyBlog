@@ -131,7 +131,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'mightyblog.urls'
 
 REDACTOR_OPTIONS = {'lang': 'en'}
-REDACTOR_UPLOAD = 'uploads/'
+REDACTOR_UPLOAD = 'media/'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 
