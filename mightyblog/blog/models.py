@@ -5,6 +5,8 @@ from redactor.fields import RedactorField
 from tagging.fields import TagField
 from tagging.utils import parse_tag_input
 
+from mightyblog.settings import base
+
 
 class PostManager(models.Manager):
     def get_visible(self):
@@ -51,7 +53,6 @@ class Comment(models.Model):
         return "%s: %s.." % (self.author, self.text[:10])
 
 
-from mightyblog.settings import base
 
 class Category(models.Model):
     name = models.CharField(max_length=63)

@@ -10,12 +10,11 @@
 
 {% endblock %}
 
-
 {% block content %}
     <h2>{{ post.title }}</h2>
     <time>&#123;&#123; {{ post.date_created }} &#125;&#125;</time>
     {% for category in post.category_set.all %}
-    <a href="{{ category.get_absolute_url }}">{{ category }}</a>
+        <a href="{{ category.get_absolute_url }}">{{ category }}</a>
     {% endfor %}
     <hr>
 
@@ -23,7 +22,14 @@
         {{ post.content|safe }}
     </p>
 
-    {% if comments %}
+
+  <hr>
+    <form class="comment-form" action="" method="post">{% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+
+  {% if comments %}
         <p class="my_h2">Comments:</p>
         <hr>
         {% for comment in comments %}

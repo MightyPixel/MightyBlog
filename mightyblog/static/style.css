@@ -20,11 +20,6 @@ body {
     color: #f14e23; }
     body .a_inverse:hover {
       border-color: #35bdf5; }
-  body .dotted {
-    border-top: 1px dotted;
-    color : #35bdf5;
-    height: 0px;
-    margin: 0; }
   body #social_box {
     margin: 0pt;
     padding: 0pt;
@@ -63,7 +58,7 @@ body {
     font: 12px/22px Verdana, sans-serif; }
     body form label {
       color: #666;
-      display: block;
+      display: inline;
       font-size: 10px;
       font-weight: bold;
       margin: 0 0 0 2px; }

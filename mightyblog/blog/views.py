@@ -65,13 +65,13 @@ def projects(request):
 def article(request, post_id, post_name):
     post = Post.objects.get(pk=post_id)
     if request.method == "POST":
-        comment_form = CommentForm()
+        comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             comment = Comment()
             comment.author = comment_form.cleaned_data['author']
             comment.post = post
             comment.email = comment_form.cleaned_data['email']
-            comment.text = comment_form.cleaned_data['comment']
+            comment.text = comment_form.cleaned_data['text']
             comment.save()
 
     spotlighted = Project.objects.filter(related_posts=post)

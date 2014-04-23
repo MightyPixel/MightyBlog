@@ -6,36 +6,18 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
   	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}blog.css" />
+
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css" />
-        <script type="text/javascript">
-            document.write("\<script src='//ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js' type='text/javascript'>\<\/script>");
-        </script>
-        <script type="text/javascript">
-            $(document).ready(function() {
-                var full_title = document.title.split(' | ');
-                var title = full_title[0];
-                if ( title == "Newsroom" ) {
-                    section = "news_menu";
-                } else if ( title == "Articles" ) {
-                    section = "articles_menu";
-                } else if ( title == "Self" ) {
-                    section = "self_menu";
-                } else if ( title == "Projects" ) {
-                    section = "projects_menu";
-                }
-                d = document.getElementById(section);
-                d.className = "curr_menu_item";
-            });
-        </script>
-	</head>
+    </head>
 	<body>
         <header>
             <h1>Ognyan Angelov's<a href="#">.blog</a></h1>
             <div id="social_box">
-                <a rel="nofollow" href="http://www.linkedin.com/pub/ognyan-angelov/3b/6b/12a"><img class="linkedin_icon" src="/static/linkedin_icon1.png" alt="linkedin_icon"></a>
-                <a rel="nofollow" href="https://github.com/MightyPixel"><img class="github_icon" src="/static/github_icon.png" alt="github_icon"></a>
-                <a rel="nofollow" href="https://twitter.com/mightypixel"><img class="twitter_icon" src="/static/twitter_icon.png" alt="twitter_icon"></a>
-                <a rel="nofollow" href="https://plus.google.com/u/0/110035921318635890483"><img class="googleplus_icon" src="/static/googleplus_icon.png" alt="googleplus_icon"></a>
+                <a href="http://www.linkedin.com/pub/ognyan-angelov/3b/6b/12a"><img class="linkedin_icon" src="/static/linkedin_icon1.png" alt="linkedin_icon"></a>
+                <a href="https://github.com/MightyPixel"><img class="github_icon" src="/static/github_icon.png" alt="github_icon"></a>
+                <a href="https://twitter.com/mightypixel"><img class="twitter_icon" src="/static/twitter_icon.png" alt="twitter_icon"></a>
+                <a href="https://plus.google.com/u/0/110035921318635890483"><img class="googleplus_icon" src="/static/googleplus_icon.png" alt="googleplus_icon"></a>
                 <!-- <a rel="nofollow"><img class="rss_icon"
                     src="/static/rss_icon.png" alt="rss_icon"></a> -->
             </div>
@@ -70,6 +52,13 @@
                     </article>
                 {% endfor %}
             {% endblock %}
+            <article>
+                <div class="my_h1">Friend Blogs:</div>
+                <hr/>
+                <a href="http://www.bachvarov.info">Ivaylo Bachvarov's blog</a>
+                <a href="http://vladi.io/">Vladimir Tsvetkov's blog</a>
+                <a href="http://www.peshev.net/blog/">Mario's Peshev's blog</a>
+            </article>
         </aside>
         <article>
             {% block content %}
@@ -92,7 +81,22 @@
 
       ga('create', 'UA-43679523-2', 'mightypixel.net');
       ga('send', 'pageview');
-
+      <script src='//ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js'/>
+        $(document).ready(function() {
+            var full_title = document.title.split(' | ');
+            var title = full_title[0];
+            if ( title == "Newsroom" ) {
+                section = "news_menu";
+            } else if ( title == "Articles" ) {
+                section = "articles_menu";
+            } else if ( title == "Self" ) {
+                section = "self_menu";
+            } else if ( title == "Projects" ) {
+                section = "projects_menu";
+            }
+            d = document.getElementById(section);
+            d.className = "curr_menu_item";
+        });
     </script>
 	</body>
 </html>
