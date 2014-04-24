@@ -5,7 +5,7 @@ import keychain
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 1025
 
-ALLOWED_HOSTS = ['mightypixel.net']
+ALLOWED_HOSTS = ['mightypixel.net', 'www.mightypixel.net']
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
