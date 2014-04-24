@@ -1,5 +1,7 @@
 from base import *
 
+import keychain
+
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 1025
 
