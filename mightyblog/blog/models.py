@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from django.db import models
+from django.core.exceptions import ObjectDoesNotExist
 from redactor.fields import RedactorField
 from tagging.fields import TagField
 from tagging.utils import parse_tag_input
@@ -11,6 +12,12 @@ from mightyblog.settings import base
 class PostManager(models.Manager):
     def get_visible(self):
         return super(PostManager, self).get_queryset().filter(visible=True) 
+
+    def get_visible_post(self, post_id):
+        try:
+            return super(PostManager, self).get_queryset().get(pk=post_id, visible=True) 
+        except ObjectDoesNotExist:
+            return None
 
 
 class Post(models.Model):
@@ -75,7 +82,7 @@ class Category(models.Model):
 
 class Project(models.Model):
     name = models.CharField(max_length=63)
-    related_posts = models.ManyToManyField(Post)
+    related_posts = models.ManyToManyField(Post, null=True, blank=True)
     github_url = models.URLField(null=True, blank=True)
     content = RedactorField()
     tags = TagField()
@@ -85,3 +92,6 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return "/project/" + str(self.pk) + "/" + self.name.replace(' ', '-')
+
+class Friend(models.Model):
+    blog = models.URLField(null=True, blank=True)

@@ -2,13 +2,16 @@ from .base import *
 
 import keychain
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 1025
 
 INTERNAL_IPS = ("127.0.0.1", )
+
+
+ALLOWED_HOSTS = ['*']#['mightypixel.net']
 
 WSGI_APPLICATION = 'mightyblog.wsgi_dev.application'
 

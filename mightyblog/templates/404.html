@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block title%}404 Not found!{% endblock %}
+
+{% block aside_content %}
+    {% for project in projects %}
+    adfs
+    <a href="{{ project.get_absolute_url }}" class="my_h2">{{ project.name }}</a><br>
+    {% endfor %}
+{% endblock %}
+
+
+{% block content %}
+
+<img src="{{ STATIC_URL }}not_found.png" alt="smt" >
+
+{% endblock %}
+
+

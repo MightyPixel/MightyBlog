@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 
@@ -63,7 +64,10 @@ def projects(request):
 
 
 def article(request, post_id, post_name):
-    post = Post.objects.get(pk=post_id)
+    post = Post.posts.get_visible_post(post_id)
+    if not post:
+        raise Http404
+
     if request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
@@ -133,3 +137,6 @@ def about(request):
                 "post" : post,
             },
             context_instance=RequestContext(request))
+
+
+

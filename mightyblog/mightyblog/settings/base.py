@@ -1,7 +1,7 @@
 # Django settings for mightyblog project.
 
 DEBUG = False
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = DEBUG
 
 import os
 from django.core.exceptions import ImproperlyConfigured

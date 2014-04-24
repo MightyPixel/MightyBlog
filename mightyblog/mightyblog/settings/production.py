@@ -3,9 +3,9 @@ from base import *
 EMAIL_HOST = "localhost"
 EMAIL_PORT = 1025
 
-ALLOWED_HOSTS = ['*']#['mightypixel.net']
+ALLOWED_HOSTS = ['mightypixel.net']
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 
