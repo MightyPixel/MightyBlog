@@ -22,7 +22,7 @@ sys.path.append('/home/ubuntu/MightyBlog/mightyblog')
 # if running multiple sites in the same mod_wsgi process. To fix this, use
 # mod_wsgi daemon mode with each site in its own daemon process, or use
 # os.environ["DJANGO_SETTINGS_MODULE"] = "panda.settingsos.environ["DJANGO_SETTINGS_MODULE"] = "panda.settings"
-os.environ["DJANGO_SETTINGS_MODULE"] = "mightyblog.settings.dev"
+os.environ["DJANGO_SETTINGS_MODULE"] = "mightyblog.settings.production"
 
 
 
