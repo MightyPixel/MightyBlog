@@ -77,6 +77,7 @@ def article(request, post_id, post_name):
             comment.email = comment_form.cleaned_data['email']
             comment.text = comment_form.cleaned_data['text']
             comment.save()
+            return HttpResponseRedirect("/")
 
     spotlighted = Project.objects.filter(related_posts=post)
     comments = Comment.objects.filter(post=post)

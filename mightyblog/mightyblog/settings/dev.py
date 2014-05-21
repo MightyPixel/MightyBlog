@@ -1,8 +1,7 @@
 from .base import *
 
-import keychain
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 EMAIL_HOST = "localhost"

@@ -24,12 +24,7 @@
 
 
   <hr>
-    <form class="comment-form" action="" method="post">{% csrf_token %}
-        {{ comment_form.as_p }}
-        <input type="submit" value="Submit" />
-    </form>
-
-  {% if comments %}
+      {% if comments %}
         <p class="my_h2">Comments:</p>
         <hr>
         {% for comment in comments %}
@@ -37,4 +32,11 @@
             <p>{{ comment.text }}</p>
         {% endfor %}
     {% endif %}
+
+    <form class="comment-form" action="#" method="post">{% csrf_token %}
+        {{ comment_form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+
+
 {% endblock %}

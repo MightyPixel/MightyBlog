@@ -6,6 +6,7 @@ TEMPLATE_DEBUG = DEBUG
 import os
 from django.core.exceptions import ImproperlyConfigured
 from unipath import Path
+import keychain
 
 
 def get_env_variable(var_name):
@@ -158,6 +159,7 @@ INSTALLED_APPS = (
     'south',
     'blog',
     'redactor',
+    'captcha',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -188,3 +190,6 @@ LOGGING = {
         },
     }
 }
+
+RECAPTCHA_PUBLIC_KEY = '6Lcd6fMSAAAAAP-pOXvpqaYrE_Xh1XZNWSQ9wcSJ'
+RECAPTCHA_PRIVATE_KEY = keychain.RECAPTCHA_PRIVATE_KEY
