@@ -5,7 +5,8 @@
 
 {% block aside_content %}
     {% for project in spotlighted %}
-    <a href="{{ project.get_absolute_url }}" class="a_inverse">{{ project.name }}</a>
+        <hr/>
+        <a href="{{ project.get_absolute_url }}" class="a_inverse">{{ project.name }}</a>
     {% endfor %}
 
 {% endblock %}

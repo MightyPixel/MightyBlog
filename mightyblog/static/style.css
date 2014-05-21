@@ -85,8 +85,9 @@ body {
     font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
     font-size: 16pt;
     margin: 2pt; }
-  body ul {
-    list-style-image: url("arrow_05.png"); }
+  body article ul {
+    list-style: none;
+    background: url("arrow_02_small.png") no-repeat; }
 
 header h1 {
   float: left;

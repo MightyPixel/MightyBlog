@@ -160,9 +160,13 @@ body
         margin: $medium;
     }
 
-    ul
+    article
     {
-       list-style-image: url('arrow_05.png'); 
+        ul
+        {
+            list-style: none;
+            background: url('arrow_02_small.png') no-repeat;
+        }
     }
 }
 

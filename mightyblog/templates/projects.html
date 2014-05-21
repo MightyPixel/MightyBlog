@@ -7,7 +7,8 @@
 {% block aside_title %}Spotlight:{% endblock %}
 {% block aside_content %}
     {% for post in related_posts %}
-    <h2 class="my_h2"><a href="{{ post.get_absolute_url }}" class="a_inverse">{{ post.title }}</a></h2>
+        <hr />
+        <h2 class="my_h2"><a href="{{ post.get_absolute_url }}" class="a_inverse">{{ post.title }}</a></h2>
     {% endfor %}
 {% endblock %}
 
