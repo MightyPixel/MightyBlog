@@ -8,6 +8,7 @@ from django.core.exceptions import ImproperlyConfigured
 from unipath import Path
 import keychain
 
+NAME = "MightyBlog"
 
 def get_env_variable(var_name):
     """
