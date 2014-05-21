@@ -12,17 +12,22 @@ from models import Project
 from forms import CommentForm
 
 
+RELATED_ARTICLES_COUNT = 6 
+
+
 def home(request):
     """
     Index page
     """
     all_posts = Post.posts.get_visible().order_by('date_modefied')
-    spotlighted = Post.get_top_rated()
+    spotlighted = Post.posts.get_top_rated()
+
     if len(all_posts) > 0:
-        related = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
+        related = TaggedItem.objects.get_related(all_posts[0], Post)[:RELATED_ARTICLES_COUNT]
         related = [post for post in related if post.visible == True]
     else:
         related = None
+
     return render_to_response('index.html',
             {
                 "posts": all_posts,
@@ -38,10 +43,12 @@ def articles(request):
     """
     all_posts = Post.posts.get_visible().order_by('date_created')
     categories = Category.objects.all()
+
     try:
-        related = TaggedItem.objects.get_related(all_posts[0], Post)[:6]
+        related = TaggedItem.objects.get_related(all_posts[0], Post)[:RELATED_ARTICLES_COUNT]
     except IndexError:
         related = []
+
     return render_to_response('articles.html',
             {
                 "page_title": "Articles",
@@ -54,7 +61,7 @@ def articles(request):
 
 def projects(request):
     projects = Project.objects.all()
-    posts = Post.posts.get_visible()[:5]
+    posts = Post.posts.get_visible()[:RELATED_ARTICLES_COUNT]
     return render_to_response('projects.html',
                               {
                                 "projects": projects,
@@ -65,6 +72,7 @@ def projects(request):
 
 def article(request, post_id, post_name):
     post = Post.posts.get_visible_post(post_id)
+
     if not post:
         raise Http404
 
@@ -78,11 +86,15 @@ def article(request, post_id, post_name):
             comment.text = comment_form.cleaned_data['text']
             comment.save()
             return HttpResponseRedirect("/")
+        else:
+            # TODO SHOW ERRORS
+            pass
 
     spotlighted = Project.objects.filter(related_posts=post)
     comments = Comment.objects.filter(post=post)
     related = TaggedItem.objects.get_related(post, Post)[:6]
     comment_form = CommentForm()
+
     return render_to_response('article.html',
             {
                 "post": post,
@@ -96,7 +108,8 @@ def article(request, post_id, post_name):
 
 def project(request, project_id, project_name):
     project = Project.objects.get(pk=project_id)
-    related_projects = Project.objects.all()[:5]
+    related_projects = Project.objects.all()[:RELATED_ARTICLES_COUNT]
+
     return render_to_response('project.html',
             {
                 "project": project,
@@ -117,6 +130,7 @@ def category(request, category):
         related_posts = []
 
     categories = Category.objects.all()
+
     return render_to_response('articles.html',
         {
             "page_title": category.name,
@@ -132,6 +146,7 @@ def category(request, category):
 def about(request):
     projects = Project.objects.all()
     post = Post.objects.first()
+
     return render_to_response('about.html',
             {
                 "projects" : projects,

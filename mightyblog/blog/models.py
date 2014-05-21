@@ -8,16 +8,7 @@ from tagging.utils import parse_tag_input
 
 from mightyblog.settings import base
 
-
-class PostManager(models.Manager):
-    def get_visible(self):
-        return super(PostManager, self).get_queryset().filter(visible=True) 
-
-    def get_visible_post(self, post_id):
-        try:
-            return super(PostManager, self).get_queryset().get(pk=post_id, visible=True) 
-        except ObjectDoesNotExist:
-            return None
+import managers
 
 
 class Post(models.Model):
@@ -30,7 +21,7 @@ class Post(models.Model):
     visible = models.BooleanField(default=True)
 
     objects = models.Manager()
-    posts = PostManager()
+    posts = managers.PostManager()
 
     def __unicode__(self):
         return "%s | (%d,%d,%d)" % (self.title,
@@ -43,10 +34,6 @@ class Post(models.Model):
 
     def get_tag_list(self):
         return parse_tag_input(self.tags)
-
-    @staticmethod
-    def get_top_rated():
-        return Post.objects.filter(visible=True)[:10]
 
 
 class Comment(models.Model):
@@ -92,6 +79,7 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return "/project/" + str(self.pk) + "/" + self.name.replace(' ', '-')
+
 
 class Friend(models.Model):
     blog = models.URLField(null=True, blank=True)

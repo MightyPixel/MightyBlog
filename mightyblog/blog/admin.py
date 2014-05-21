@@ -13,8 +13,10 @@ class PostAdminForm(forms.ModelForm):
            'content': RedactorEditor(),
         }
 
+
 class PostAdmin(admin.ModelAdmin):
     form = PostAdminForm
+
 
 admin.site.register(models.Post, PostAdmin)
 admin.site.register(models.Comment)
