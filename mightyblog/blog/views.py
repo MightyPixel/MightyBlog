@@ -19,7 +19,7 @@ def home(request):
     """
     Index page
     """
-    all_posts = Post.posts.get_visible().order_by('date_modefied')
+    all_posts = Post.posts.get_visible().order_by('-date_modefied')
     spotlighted = Post.posts.get_top_rated()
 
     if len(all_posts) > 0:
