@@ -24,9 +24,58 @@ html
     height: 100%;
 }
 
+@media only screen 
+and (max-width : 480px) {
+    aside {
+        // display: none;
+    }
+    header
+    {
+        h1
+        {
+            display: table-footer-group;
+        }
+        h2
+        {
+            display: none;
+        }
+
+        #social_box
+        {
+            display: table-header-group;
+            margin-top: 0px;
+        }
+    }
+}
+
+@media only screen 
+and (min-width : 480px) {
+    aside {
+        // display: none;
+    }
+    header
+    {
+        h1
+        {
+            display: table-header-group;
+        }
+        h2
+        {
+            display: table-footer-group;
+        }
+
+        #social_box
+        {
+            display: table-footer-group;
+            margin-top: -40px;
+        }
+    }
+}
+
+
+
 body
 {
-
     display: block;
     max-width: 950px;
 
@@ -60,7 +109,6 @@ body
 
     #social_box
     {
-        margin: $none;
         padding: $none;
         float: right;
         img
@@ -92,6 +140,7 @@ body
         background: $highlight_colour;
         border: $small dotted $border_colour;
     }
+
     .confirm
     {
         max-width: 50%;
@@ -112,6 +161,7 @@ body
         margin: 0 0 20px;
         padding: $huge;
         font: 12px/22px Verdana, sans-serif;
+
         label
         {
             color: #666;
@@ -120,6 +170,7 @@ body
             font-weight: bold;
             margin: 0 0 0 2px;
         }
+
         input
         {
             margin: 0 0 10px;
@@ -164,17 +215,18 @@ body
     {
         ul
         {
-            list-style: none;
-            background: url('arrow_02_small.png') no-repeat;
+            list-style-image: url('arrow_02_small.png');
         }
     }
 }
 
 header
 {
+    display: table;
+    width: 100%;
+
     h1
     {
-        float: left;
         font: $serious_font, arial, sans-serif;
         color: #eee;
     }
@@ -228,7 +280,7 @@ nav
 
 aside
 {
-    width: 29%;
+    width: 23%;
     float: right;
     padding: $small;
     //border: $small dotted $gray_border_colour;
@@ -243,7 +295,7 @@ aside
     {
         margin-bottom: $huge;
         border: $medium dotted $baby_blue;
-        width: 70%;
+        width: 100%;
         -webkit-border-radius: $huge;
     }
 
@@ -259,7 +311,7 @@ aside
 article
 {
     display: block;
-    color: #000;
+    color: black;
     background: #FdFdFd;
     //padding: 10pt;
 

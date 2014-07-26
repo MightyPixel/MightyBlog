@@ -1,40 +1,42 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
+    <head>
         <title>{% block title %}Newsroom{% endblock %} | Ognyan Angelov's Blog </title>
-	    <meta name="description" content="Ognyan Angelov Blog" />
-		<meta charset="utf-8">
-
-	<link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
-
-  	    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}blog.css" />
+        <meta name="description" content="Ognyan Angelov Blog" />
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}style.css" />
-
-
     </head>
-	<body>
+    <body>
         <header>
             <h1>Ognyan Angelov's<a href="#">.blog</a></h1>
             <div id="social_box">
-                <a href="http://www.linkedin.com/pub/ognyan-angelov/3b/6b/12a"><img class="linkedin_icon" src="/static/linkedin_icon1.png" alt="linkedin_icon"></a>
-                <a href="https://github.com/MightyPixel"><img class="github_icon" src="/static/github_icon.png" alt="github_icon"></a>
-                <a href="https://twitter.com/mightypixel"><img class="twitter_icon" src="/static/twitter_icon.png" alt="twitter_icon"></a>
-                <a href="https://plus.google.com/u/0/110035921318635890483"><img class="googleplus_icon" src="/static/googleplus_icon.png" alt="googleplus_icon"></a>
-                <!-- <a rel="nofollow"><img class="rss_icon"
-                    src="/static/rss_icon.png" alt="rss_icon"></a> -->
+                <a href="http://www.linkedin.com/pub/ognyan-angelov/3b/6b/12a">
+                    <img class="linkedin_icon" src="/static/linkedin_icon1.png" alt="linkedin_icon">
+                </a>
+                <a href="https://github.com/MightyPixel">
+                    <img class="github_icon" src="/static/github_icon.png" alt="github_icon">
+                </a>
+                <a href="https://twitter.com/mightypixel">
+                    <img class="twitter_icon" src="/static/twitter_icon.png" alt="twitter_icon">
+                </a>
+                <a href="https://plus.google.com/u/0/110035921318635890483">
+                    <img class="googleplus_icon" src="/static/googleplus_icon.png" alt="googleplus_icon">
+                </a>
+                <!-- <a rel="nofollow"><img class="rss_icon" src="/static/rss_icon.png" alt="rss_icon"></a> -->
             </div>
             <h2>One does not simply call me 'just' a blog</h2>
         </header>
         <nav>
             <ul>
-                <li><a id="news_menu" href="/">Newsroom</a></li>
-                <li><a id="articles_menu" href="/articles/">Articles</a></li>
-                <li><a id="projects_menu" href="/projects/">Projects</a></li>
-                <li><a id="self_menu" href="/self/">.self</a></li>
+                <li><a id="news_menu" href="{% url 'home' %}">Newsroom</a></li>
+                <li><a id="articles_menu" href="{% url 'articles' %}">Articles</a></li>
+                <li><a id="projects_menu" href="{% url 'projects' %}">Projects</a></li>
+                <li><a id="about_menu" href="{% url 'about' %}">.self</a></li>
             </ul>
-        </nav>
+        </nav> 
         <aside>
             <article id="aside_navigation">
                 <img class="pin" src="/static/pin.png" alt="pin">
@@ -59,7 +61,9 @@
                 <div class="my_h1">Friend Blogs:</div>
                 <hr/>
                 <a href="http://www.bachvarov.info">Ivaylo Bachvarov's blog</a>
+                <br />
                 <a href="http://vladi.io/">Vladimir Tsvetkov's blog</a>
+                <br />
                 <a href="http://www.peshev.net/blog/">Mario's Peshev's blog</a>
             </article>
         </aside>
@@ -94,7 +98,7 @@
                 } else if ( title == "Articles" ) {
                     section = "articles_menu";
                 } else if ( title == "Self" ) {
-                    section = "self_menu";
+                    section = "about_menu";
                 } else if ( title == "Projects" ) {
                     section = "projects_menu";
                 }

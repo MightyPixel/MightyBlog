@@ -8,7 +8,6 @@
         <hr/>
         <a href="{{ project.get_absolute_url }}" class="a_inverse">{{ project.name }}</a>
     {% endfor %}
-
 {% endblock %}
 
 {% block content %}
@@ -23,9 +22,8 @@
         {{ post.content|safe }}
     </p>
 
-
-  <hr>
-      {% if comments %}
+    <hr>
+    {% if comments %}
         <p class="my_h2">Comments:</p>
         <hr>
         {% for comment in comments %}
@@ -38,6 +36,4 @@
         {{ comment_form.as_p }}
         <input type="submit" value="Submit" />
     </form>
-
-
 {% endblock %}
