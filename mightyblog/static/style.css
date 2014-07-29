@@ -102,7 +102,6 @@ body {
     margin: 2pt; }
   body article ul {
     list-style-type: none;
-    padding: 0px;
     margin: 0px; }
     body article ul li {
       background-image: url("arrow_02_small.png");
