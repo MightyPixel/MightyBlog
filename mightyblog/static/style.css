@@ -101,8 +101,7 @@ body {
     font-size: 16pt;
     margin: 2pt; }
   body article ul {
-    list-style-type: none;
-    margin: 0px; }
+    list-style-type: none; }
     body article ul li {
       background-image: url("arrow_02_small.png");
       background-repeat: no-repeat;
