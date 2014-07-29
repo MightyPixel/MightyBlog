@@ -51,7 +51,6 @@ def articles(request):
 
     return render_to_response('articles.html',
             {
-                "page_title": "Articles",
                 "posts": all_posts,
                 "categories": categories,
                 "related": related,
