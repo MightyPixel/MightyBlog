@@ -101,7 +101,14 @@ body {
     font-size: 16pt;
     margin: 2pt; }
   body article ul {
-    list-style-image: url("arrow_02_small.png"); }
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px; }
+    body article ul li {
+      background-image: url("arrow_02_small.png");
+      background-repeat: no-repeat;
+      background-position: 0px 5px;
+      padding-left: 35px; }
 
 header {
   display: table;
