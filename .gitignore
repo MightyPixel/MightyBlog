@@ -8,3 +8,5 @@ mightyblog/manage.py
 build
 media/
 example
+**.swp
+**cache
