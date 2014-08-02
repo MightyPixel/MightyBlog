@@ -116,6 +116,8 @@ article {
   padding: 10px;
   color: black;
   background: #FdFdFd;
+  text-align: justify;
+  padding: 4pt;
   border-top: 1pt solid #35bdf5;
   border-bottom: 2pt solid #f14e23;
   border-right: 0pt solid #222222; }
@@ -184,8 +186,7 @@ footer p {
     margin-top: 0pt; }
 
   article {
-    width: 100%;
-    padding: 0pt; } }
+    width: 100%; } }
 @media only screen and (min-width: 480px) {
   aside {
     display: block; }

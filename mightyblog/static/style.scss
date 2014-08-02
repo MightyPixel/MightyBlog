@@ -221,6 +221,8 @@ article
     padding: 10px;
     color: black;
     background: #FdFdFd;
+    text-align: justify;
+    padding: $huge;
 
     border-top: $small solid $baby_blue;
     border-bottom: $medium solid $orange;
@@ -344,7 +346,6 @@ and (max-width : 480px) {
     article
     {
         width: 100%;
-	padding: $none;
     }
 }
 
