@@ -33,7 +33,7 @@ html {
     margin-top: -40px; }
 
   article {
-    width: 67%;
+    width: 71%;
     border-left: 3pt solid #35bdf5; } }
 body {
   display: block;
@@ -184,7 +184,7 @@ article {
   border-top: 1pt solid #35bdf5;
   border-bottom: 2pt solid #f14e23;
   border-right: 0pt solid #222222;
-  min-height: 71%; }
+  min-height: 69%; }
   article h2 {
     font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
     font-size: 20pt;
