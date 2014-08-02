@@ -2,45 +2,12 @@ html {
   min-height: 100%;
   height: 100%; }
 
-@media only screen and (max-width: 480px) {
-  aside {
-    display: none; }
-
-  header h1 {
-    display: table-footer-group; }
-  header h2 {
-    display: none; }
-  header nav ul li {
-    padding-right: 12px; }
-  header #social_box {
-    display: table-header-group;
-    margin-top: 0px; }
-
-  article {
-    width: 100%; } }
-@media only screen and (min-width: 480px) {
-  aside {
-    display: block; }
-
-  header h1 {
-    display: table-header-group; }
-  header h2 {
-    display: table-footer-group; }
-  header nav li {
-    padding-right: 20px; }
-  header #social_box {
-    display: table-footer-group;
-    margin-top: -40px; }
-
-  article {
-    width: 71%;
-    border-left: 3pt solid #35bdf5; } }
 body {
   display: block;
   max-width: 950px;
-  margin: auto;
   min-height: 100%;
   height: 100%;
+  margin: auto;
   background-image: url("bg6.png"); }
   body a {
     outline: none;
@@ -53,55 +20,6 @@ body {
     color: #f14e23; }
     body .a_inverse:hover {
       border-color: #35bdf5; }
-  body #social_box {
-    padding: 0pt;
-    float: right; }
-    body #social_box img {
-      margin: 0pt;
-      padding: 0pt; }
-  body .alert {
-    max-width: 50%;
-    padding: 1pt;
-    padding-left: 2pt;
-    -webkit-border-radius: 4pt;
-    background: #ffcccc;
-    border: 1pt dotted #ff9966; }
-  body .highlight {
-    max-width: 50%;
-    padding: 1pt;
-    padding-left: 2pt;
-    -webkit-border-radius: 4pt;
-    background: #ffff99;
-    border: 1pt dotted #ff9966; }
-  body .confirm {
-    max-width: 50%;
-    padding: 1pt;
-    padding-left: 2pt;
-    -webkit-border-radius: 4pt;
-    background: #ccff99;
-    border: 1pt dotted #ff9966; }
-  body form {
-    max-width: 68%;
-    display: block;
-    -webkit-border-radius: 4pt;
-    background: #ddd;
-    margin: 0 0 20px;
-    padding: 4pt;
-    font: 12px/22px Verdana, sans-serif; }
-    body form label {
-      color: #666;
-      display: inline;
-      font-size: 10px;
-      font-weight: bold;
-      margin: 0 0 0 2px; }
-    body form input {
-      margin: 0 0 10px; }
-  body time {
-    display: block;
-    margin: 0pt;
-    font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
-    font-size: 14pt;
-    color: #f14e23; }
   body .my_h1 {
     font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
     font-size: 20pt;
@@ -117,15 +35,32 @@ body {
     font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
     font-size: 16pt;
     margin: 2pt; }
-  body article ul {
-    /*li*/
-    /*{*/
-    /*background-image: url("arrow_02_small.png");*/
-    /*background-repeat: no-repeat;*/
-    /*background-position: 0px 0px;*/
-    /*padding-left: 35px;*/
-    /*line-height: 30px;*/
-    /*}*/ }
+  body #social_box {
+    float: right;
+    padding: 0pt; }
+    body #social_box img {
+      margin: 0pt;
+      padding: 0pt; }
+  body time {
+    display: block;
+    margin: 0pt;
+    font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
+    font-size: 14pt;
+    color: #f14e23; }
+  body form {
+    display: block;
+    margin: 0 0 20px;
+    padding: 4pt;
+    background: #dddddd;
+    font: 12px/22px Verdana, sans-serif; }
+    body form label {
+      color: #666;
+      display: inline;
+      font-size: 10px;
+      font-weight: bold;
+      margin: 0 0 0 2pt; }
+    body form input {
+      margin: 0 0 10px; }
 
 header {
   display: table;
@@ -176,26 +111,46 @@ aside {
     margin: 0pt; }
 
 article {
-  padding: 10px;
-  box-sizing: border-box;
   display: block;
+  box-sizing: border-box;
+  padding: 10px;
   color: black;
   background: #FdFdFd;
   border-top: 1pt solid #35bdf5;
   border-bottom: 2pt solid #f14e23;
-  border-right: 0pt solid #222222;
-  min-height: 69%; }
+  border-right: 0pt solid #222222; }
   article h2 {
+    margin: 4pt;
+    margin-bottom: 4pt;
     font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
     font-size: 20pt;
-    color: #222222;
-    margin: 4pt;
-    margin-bottom: 4pt; }
+    color: #222222; }
   article h3 {
     margin: 0pt;
     font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
     font-size: 16pt;
     color: #f14e23; }
+  article .alert {
+    max-width: 50%;
+    padding: 1pt;
+    padding-left: 2pt;
+    -webkit-border-radius: 4pt;
+    background: #ffcccc;
+    border: 1pt dotted #ff9966; }
+  article .highlight {
+    max-width: 50%;
+    padding: 1pt;
+    padding-left: 2pt;
+    -webkit-border-radius: 4pt;
+    background: #ffff99;
+    border: 1pt dotted #ff9966; }
+  article .confirm {
+    max-width: 50%;
+    padding: 1pt;
+    padding-left: 2pt;
+    -webkit-border-radius: 4pt;
+    background: #ccff99;
+    border: 1pt dotted #ff9966; }
   article .code_block {
     max-width: 70%;
     overflow: hidden;
@@ -213,3 +168,38 @@ article {
 footer p {
   color: #f14e23;
   text-align: center; }
+
+@media only screen and (max-width: 480px) {
+  aside {
+    display: none; }
+
+  header h1 {
+    display: table-footer-group; }
+  header h2 {
+    display: none; }
+  header nav li {
+    padding-right: 12px; }
+  header #social_box {
+    display: table-header-group;
+    margin-top: 0pt; }
+
+  article {
+    width: 100%;
+    padding: 0pt; } }
+@media only screen and (min-width: 480px) {
+  aside {
+    display: block; }
+
+  header h1 {
+    display: table-header-group; }
+  header h2 {
+    display: table-footer-group; }
+  header nav li {
+    padding-right: 20px; }
+  header #social_box {
+    display: table-footer-group;
+    margin-top: -40px; }
+
+  article {
+    width: 71%;
+    border-left: 3pt solid #35bdf5; } }
