@@ -3,21 +3,38 @@ html {
   height: 100%; }
 
 @media only screen and (max-width: 480px) {
+  aside {
+    display: none; }
+
   header h1 {
     display: table-footer-group; }
   header h2 {
     display: none; }
+  header nav ul li {
+    padding-right: 12px; }
   header #social_box {
     display: table-header-group;
-    margin-top: 0px; } }
+    margin-top: 0px; }
+
+  article {
+    width: 100%; } }
 @media only screen and (min-width: 480px) {
+  aside {
+    display: block; }
+
   header h1 {
     display: table-header-group; }
   header h2 {
     display: table-footer-group; }
+  header nav li {
+    padding-right: 20px; }
   header #social_box {
     display: table-footer-group;
-    margin-top: -40px; } }
+    margin-top: -40px; }
+
+  article {
+    width: 67%;
+    border-left: 3pt solid #35bdf5; } }
 body {
   display: block;
   max-width: 950px;
@@ -135,7 +152,7 @@ nav {
       display: inline;
       font: normal 100% "Yanone Kaffeesatz", sans-serif;
       font-size: 20pt;
-      padding-right: 20px; }
+      padding-right: 12px; }
     nav ul .curr_menu_item {
       border-bottom: 3pt solid #f14e23;
       -webkit-border-radius: 4pt; }
@@ -143,12 +160,11 @@ nav {
         color: #f14e23; }
 
 aside {
-  width: 23%;
-  float: right;
-  padding: 1pt; }
+  width: 27%;
+  float: right; }
   aside .pin {
-    margin-top: -35px;
-    margin-right: -25px;
+    margin-top: -15px;
+    margin-right: -10px;
     float: right; }
   aside article {
     margin-bottom: 4pt;
@@ -163,12 +179,9 @@ article {
   color: black;
   background: #FdFdFd;
   border-top: 1pt solid #35bdf5;
-  border-left: 3pt solid #35bdf5;
   border-bottom: 2pt solid #f14e23;
   border-right: 0pt solid #222222;
-  width: 67%;
-  min-height: 69%;
-  padding: 15px; }
+  min-height: 69%; }
   article h2 {
     font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
     font-size: 20pt;
