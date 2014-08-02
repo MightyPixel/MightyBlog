@@ -345,16 +345,17 @@ aside
 
 article
 {
+    padding: 10px;
+    box-sizing: border-box;
     display: block;
     color: black;
     background: #FdFdFd;
-    //padding: 10pt;
 
     border-top: $small solid $baby_blue;
     border-bottom: $medium solid $orange;
     border-right: $none solid $dark_gray_colour;
 
-    min-height: 69%;
+    min-height: 71%;
 
     h2
     {

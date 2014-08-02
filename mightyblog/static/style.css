@@ -176,13 +176,15 @@ aside {
     margin: 0pt; }
 
 article {
+  padding: 10px;
+  box-sizing: border-box;
   display: block;
   color: black;
   background: #FdFdFd;
   border-top: 1pt solid #35bdf5;
   border-bottom: 2pt solid #f14e23;
   border-right: 0pt solid #222222;
-  min-height: 69%; }
+  min-height: 71%; }
   article h2 {
     font: normal 100% "Yanone Kaffeesatz", arial, sans-serif;
     font-size: 20pt;
