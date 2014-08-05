@@ -5,3 +5,6 @@ user = ""
 password = ""
 
 secret_key = "secretkey"
+
+
+RECAPTCHA_PRIVATE_KEY = ""

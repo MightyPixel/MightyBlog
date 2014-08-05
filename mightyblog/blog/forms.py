@@ -8,5 +8,4 @@ class CommentForm(ModelForm):
     captcha = ReCaptchaField()
     class Meta:
         model = Comment
-        fields = ('author', 'email', 'text') 
-
+        fields = ('author', 'email', 'text')

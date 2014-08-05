@@ -49,6 +49,7 @@ body {
     color: #f14e23; }
   body form {
     display: block;
+    overflow: hidden;
     margin: 0 0 20px;
     padding: 4pt;
     background: #dddddd;
@@ -60,7 +61,8 @@ body {
       font-weight: bold;
       margin: 0 0 0 2pt; }
     body form input {
-      margin: 0 0 10px; }
+      margin: 0 0 10px;
+      width: 98%; }
 
 header {
   display: table;

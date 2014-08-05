@@ -106,6 +106,7 @@ body
     form
     {
         display: block;
+        overflow: hidden;
         margin: 0 0 20px;
         padding: $huge; 
         background: $gray_colour;
@@ -123,6 +124,7 @@ body
         input
         {
             margin: 0 0 10px;
+            width: 98%;
         }
     }
 }
